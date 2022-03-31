@@ -1,0 +1,55 @@
+
+<div class="container from-top">
+    <form [formGroup]="userForm" (ngSubmit)="saveNewUser()">
+        
+          
+    
+        <div class="form-group row justify-content-center">
+            <label class="col-12 col-sm-4 col-md-4 col-lg-2 col-form-label ctms-form-label">Name * :</label>
+            <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+              <input class="col-sm-12" type="text" name="Name" formControlName="Name"  maxlength="50">
+              <span *ngIf="userForm.controls['Name'].touched && userForm.controls['Name'].invalid && userForm.controls['Name'].errors.required" class="form-error">Name is required</span>
+              <span *ngIf="userForm.controls['Name'].touched && userForm.controls['Name'].invalid && userForm.controls['Name'].errors.pattern" class="form-error">Special Charecters are not allowed</span>
+              <span *ngIf = "(userForm.controls['Name'].dirty || userForm.controls['Name'].touched) && userForm.controls['Name'].hasError('minlength')" class="form-error">Length between 6 to 50</span>
+            </div>
+        </div>
+
+          <div class="form-group row justify-content-center">
+              <label class="col-12 col-sm-4 col-md-4 col-lg-2 col-form-label ctms-form-label">Email ID * :</label>
+              <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+                <input class="col-sm-12" type="text"  name="EmailId" formControlName="EmailId" maxlength="50">
+                <span *ngIf="userForm.controls['EmailId'].touched && userForm.controls['EmailId'].invalid && userForm.controls['EmailId'].errors.required" class="form-error">Email is required</span>
+                <span *ngIf="userForm.controls['EmailId'].touched && userForm.controls['EmailId'].invalid && userForm.controls['EmailId'].errors.mailFormat" class="form-error">Please enter valid email</span>
+              </div>
+          </div>
+
+          <div class="form-group row justify-content-center">
+              <label class="col-12 col-sm-4 col-md-4 col-lg-2 col-form-label ctms-form-label">Password * :</label>
+              <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+                <input class="col-sm-12" type="password" name="Password" formControlName="Password" maxlength="10">
+                <span *ngIf="userForm.controls['Password'].touched && userForm.controls['Password'].invalid && userForm.controls['Password'].errors.required" class="form-error">Passowrd Number is required</span>
+                <span *ngIf="userForm.controls['Password'].touched && userForm.controls['Password'].invalid && userForm.controls['Password'].errors.minlength" class="form-error">Enter only 10 digits</span>
+                <span *ngIf="userForm.controls['Password'].touched && userForm.controls['Password'].invalid && userForm.controls['Password'].errors.maxLength" class="form-error">Passowrd number between 5 to 10 only</span>
+              </div>
+          </div>
+
+          <div class="form-group row justify-content-center">
+            <label class="col-12 col-sm-4 col-md-4 col-lg-2 col-form-label ctms-form-label">Bio * :</label>
+            <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+              <input class="col-sm-12" type="text" name="Bio" formControlName="Bio"  maxlength="50">
+              <span *ngIf="userForm.controls['Bio'].touched && userForm.controls['Bio'].invalid && userForm.controls['Bio'].errors.required" class="form-error">Bio is required</span>
+              <!-- <span *ngIf="userForm.controls['Bio'].touched && userForm.controls['Bio'].invalid && userForm.controls['Bio'].errors.pattern" class="form-error">Special Charecters are not allowed</span> -->
+              <span *ngIf = "(userForm.controls['Bio'].dirty || userForm.controls['Bio'].touched) && userForm.controls['Bio'].hasError('minlength')" class="form-error">Length between 6 to 50</span>
+            </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+
+            <label class="col-12 col-sm-4 col-md-4 col-lg-2 col-form-label ctms-form-label"></label>
+            <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+                <button class="btn btn-lg btn-primary btn-block"[disabled]="!userForm.valid" type="submit">Register</button>
+            </div>
+
+        </div>
+    </form>
+</div>
