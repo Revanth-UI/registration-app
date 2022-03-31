@@ -27,7 +27,7 @@ export class ProfileComponent implements OnInit {
       }
     },
       error => {
-        window.alert('Error while get user details. Please try again!');
+        window.alert('Error while getting user details. Please try again!');
       });
 
   }
