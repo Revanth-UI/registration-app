@@ -10,7 +10,6 @@ export class AdminGuardService implements CanActivateChild, CanLoad{
         private userService: UserManagementService){ }
 
     canActivateChild(){
-        debugger;
         return true;
     }
     canLoad(){

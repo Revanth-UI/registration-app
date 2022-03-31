@@ -12,6 +12,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { UserManagementService } from './service/user-management.service';
 import { AdminGuardService } from './admin.gaurd';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
+import { MatButtonModule } from '@angular/material/button';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +27,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule
   ],
   providers: [
     UserManagementService,

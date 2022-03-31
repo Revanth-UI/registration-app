@@ -26,6 +26,7 @@ export class RegistrationComponent implements OnInit {
   createForm() {
     this.userForm = this.fb.group({
       Name: ['', [Validators.required, Validators.minLength(6), Validators.pattern(this.pattern)]],
+      Bio: ['', [Validators.required]],
       EmailId: ['', [Validators.required]],
       Password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(10)]]
     });
@@ -42,19 +43,20 @@ export class RegistrationComponent implements OnInit {
       this.userData.Name = this.userForm.value.Name,
         this.userData.EmailId = this.userForm.value.EmailId,
         this.userData.Password = this.userForm.value.ContactNo;
+        this.userData.Bio = this.userForm.value.Bio;
       this.userService.addUser(this.userData)
         .subscribe(data => {
           this.userService.isAuthenticated=true;
           this.router.navigate(['profile']);
         },
           error => {
-            window.alert('Error while registering user. Please try again!');
+            window.alert('Error while registering the user. Please try again!');
           });
       this.userForm.reset();
 
     }
     else {
-      window.alert('Please fill required fields');
+      window.alert('Please fill out required fields');
     }
 
 
