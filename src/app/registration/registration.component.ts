@@ -22,7 +22,7 @@ export class RegistrationComponent implements OnInit {
   ngOnInit(): void {
     this.createForm();
   }
-
+// Create form method starts here
   createForm() {
     this.userForm = this.fb.group({
       Name: ['', [Validators.required, Validators.minLength(6), Validators.pattern(this.pattern)]],
@@ -31,14 +31,17 @@ export class RegistrationComponent implements OnInit {
       Password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(10)]]
     });
   }
+  // Ends here 
+
+  // On submit method starts here
   onSubmit(registrationForm: NgForm) {
     console.log(registrationForm.value);
     const registrationData = new RegistrationData(registrationForm.value.name, registrationForm.value.email, registrationForm.value.password, registrationForm.value.bio);
-    this.authenticationService.authenticate(registrationData);
   }
+// Ends here
 
+// Save new user method starts here
   saveNewUser() {
-
     if (this.userForm.valid) {
       this.userData.Name = this.userForm.value.Name,
         this.userData.EmailId = this.userForm.value.EmailId,
@@ -61,6 +64,6 @@ export class RegistrationComponent implements OnInit {
 
 
   }
-
+// Ends here
 
 }

@@ -38,7 +38,6 @@
             <div class="col-12 col-sm-8 col-md-6 col-lg-4">
               <input class="col-sm-12" type="text" name="Bio" formControlName="Bio"  maxlength="100">
               <span *ngIf="userForm.controls['Bio'].touched && userForm.controls['Bio'].invalid && userForm.controls['Bio'].errors.required" class="form-error">Bio is required</span>
-              <!-- <span *ngIf="userForm.controls['Bio'].touched && userForm.controls['Bio'].invalid && userForm.controls['Bio'].errors.pattern" class="form-error">Special Charecters are not allowed</span> -->
               <span *ngIf = "(userForm.controls['Bio'].dirty || userForm.controls['Bio'].touched) && userForm.controls['Bio'].hasError('minlength')" class="form-error">Length between 6 to 50</span>
             </div>
         </div>

@@ -16,6 +16,8 @@ export class ProfileComponent implements OnInit {
     this.getUserDetails();
   }
 
+  // Get user details method starts here 
+
   getUserDetails() {
     this.userService.getUser()
     .subscribe(data => {
@@ -31,7 +33,7 @@ export class ProfileComponent implements OnInit {
       });
 
   }
-
+// Ends here 
 
 }
 
