@@ -18,7 +18,7 @@ export class RegistrationComponent implements OnInit {
     private authenticationService: AuthenticationService,
     private userService: UserManagementService,
     private router: Router) { }
-
+    hide = true;
   ngOnInit(): void {
     this.createForm();
   }
@@ -27,7 +27,7 @@ export class RegistrationComponent implements OnInit {
     this.userForm = this.fb.group({
       Name: ['', [Validators.required, Validators.minLength(6), Validators.pattern(this.pattern)]],
       EmailId: ['', [Validators.required]],
-      Password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(10)]],
+      Password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(12)]],
       Bio: ['', [Validators.required]]
     });
   }
