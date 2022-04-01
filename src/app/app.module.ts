@@ -13,8 +13,8 @@ import { UserManagementService } from './service/user-management.service';
 import { AdminGuardService } from './admin.gaurd';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-import { MatButtonModule } from '@angular/material/button';
-
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +28,7 @@ import { MatButtonModule } from '@angular/material/button';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatInputModule,
     MatButtonModule
   ],
   providers: [

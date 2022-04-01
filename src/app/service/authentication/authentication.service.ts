@@ -7,6 +7,7 @@ import { RegistrationData } from 'src/app/model/registrationData';
 })
 export class AuthenticationService {
 
+
   isAuthenticated = false;
 
   constructor(private router: Router) { }
@@ -17,5 +18,5 @@ export class AuthenticationService {
     this.isAuthenticated = false;
     this.router.navigate(['']);
   }
-  // Ends here
+   // Ends here
 }

@@ -16,8 +16,7 @@ export class ProfileComponent implements OnInit {
     this.getUserDetails();
   }
 
-  // Get user details method starts here 
-
+   // Get user details method starts here 
   getUserDetails() {
     this.userService.getUser()
     .subscribe(data => {
@@ -29,11 +28,11 @@ export class ProfileComponent implements OnInit {
       }
     },
       error => {
-        window.alert('Error while getting user details. Please try again!');
+        window.alert('Error while getting the user details. Please try again!');
       });
 
   }
-// Ends here 
+  // Ends here 
 
 }
 

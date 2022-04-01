@@ -26,12 +26,12 @@ export class RegistrationComponent implements OnInit {
   createForm() {
     this.userForm = this.fb.group({
       Name: ['', [Validators.required, Validators.minLength(6), Validators.pattern(this.pattern)]],
-      Bio: ['', [Validators.required]],
       EmailId: ['', [Validators.required]],
-      Password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(10)]]
+      Password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(10)]],
+      Bio: ['', [Validators.required]]
     });
   }
-  // Ends here 
+   // Ends here 
 
   // On submit method starts here
   onSubmit(registrationForm: NgForm) {
@@ -41,7 +41,9 @@ export class RegistrationComponent implements OnInit {
 // Ends here
 
 // Save new user method starts here
+
   saveNewUser() {
+
     if (this.userForm.valid) {
       this.userData.Name = this.userForm.value.Name,
         this.userData.EmailId = this.userForm.value.EmailId,
@@ -59,7 +61,7 @@ export class RegistrationComponent implements OnInit {
 
     }
     else {
-      window.alert('Please fill out required fields');
+      window.alert('Please fill out all required fields');
     }
 
 
