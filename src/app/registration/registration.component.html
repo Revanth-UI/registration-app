@@ -44,13 +44,13 @@
       </mat-form-field>
       <span
         *ngIf="userForm.controls['Password'].touched && userForm.controls['Password'].invalid && userForm.controls['Password'].errors.required"
-        class="form-error">Passowrd is required</span>
+        class="form-error">Password is required</span>
       <span
         *ngIf="userForm.controls['Password'].touched && userForm.controls['Password'].invalid && userForm.controls['Password'].errors.minlength"
-        class="form-error">Enter only 12 digits</span>
+        class="form-error">Enter only 12 characters</span>
       <span
         *ngIf="userForm.controls['Password'].touched && userForm.controls['Password'].invalid && userForm.controls['Password'].errors.maxLength"
-        class="form-error">Passowrd between 5 to 12 only</span>
+        class="form-error">Password should be between 5 to 12 characters only</span>
     </div>
     <div class="form-group row justify-content-center">
 
